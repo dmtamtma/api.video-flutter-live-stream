@@ -7,6 +7,9 @@ buildscript {
         streamPackVersion = '2.6.1'
     }
     repositories {
+        flatDir {
+            dirs 'libs'
+        }
         google()
         mavenCentral()
     }
@@ -57,6 +60,9 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
     implementation 'androidx.appcompat:appcompat:1.6.1'
 
-    implementation "io.github.thibaultbee:streampack:$streamPackVersion"
-    implementation "io.github.thibaultbee:streampack-extension-rtmp:$streamPackVersion"
+//    implementation "io.github.thibaultbee:streampack:$streamPackVersion"
+//    implementation "io.github.thibaultbee:streampack-extension-rtmp:$streamPackVersion"
+
+    implementation(name: 'core-release', ext: 'aar')
+    implementation(name: 'extension-rtmp-release', ext: 'aar')
 }
