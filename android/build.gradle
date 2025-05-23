@@ -7,6 +7,9 @@ buildscript {
         streamPackVersion = '2.6.0'
     }
     repositories {
+        flatDir {
+            dirs 'libs'
+        }
         google()
         mavenCentral()
     }
@@ -19,6 +22,9 @@ buildscript {
 
 rootProject.allprojects {
     repositories {
+        flatDir {
+            dirs 'apivideo_live_stream/libs'
+        }
         google()
         mavenCentral()
     }
@@ -57,6 +63,9 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
     implementation 'androidx.appcompat:appcompat:1.6.1'
 
-    implementation "io.github.thibaultbee:streampack:$streamPackVersion"
-    implementation "io.github.thibaultbee:streampack-extension-rtmp:$streamPackVersion"
+//    implementation "io.github.thibaultbee:streampack:$streamPackVersion"
+//    implementation "io.github.thibaultbee:streampack-extension-rtmp:$streamPackVersion"
+
+    implementation files('libs/core-release.aar')
+    implementation files('libs/extension-rtmp-release.aar')
 }
